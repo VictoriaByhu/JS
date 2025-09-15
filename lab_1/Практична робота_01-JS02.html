@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <title>Практична робота_01-JS02</title>
+</head>
+<body>
+    Сторінка привітання <br>
+    "Hello WORLD"<br>
+    <button id="greetBtn" value="Кнопка вітання">Привітати СВІТ</button>
+
+    <script>
+        "use strict";
+
+        // Основна кнопка
+        var greetBtn = document.getElementById('greetBtn');
+
+        greetBtn.onclick = function () {
+            // Ховаємо кнопку привітання/
+            greetBtn.style.display = "none";
+
+            // Створюємо заголовок
+            var h1 = document.createElement('h1');
+            h1.className = "big";
+            h1.id = "big";
+            h1.textContent = "Я ВІТАЮ ТЕБЕ, СВІТ!!!";
+            document.body.appendChild(h1);
+            h1.style.color = "red";
+            h1.style.fontSize = "4em";
+            h1.style.textAlign = "center";
+
+            // Створюємо кнопку «Відновити»
+            var resetBtn = document.createElement('button');
+            resetBtn.id = "resetBtn";
+            resetBtn.textContent = "Відновити";
+            document.body.appendChild(resetBtn);
+
+            // Обробник для кнопки «Відновити»
+            resetBtn.onclick = function () {
+                // Видаляємо h1
+                h1.remove();
+                // Видаляємо саму кнопку «Відновити»
+                resetBtn.remove();
+                // Повертаємо кнопку привітання
+                greetBtn.style.display = "inline-block";
+            };
+        };
+    </script>
+</body>
+</html>
