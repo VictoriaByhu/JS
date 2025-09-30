@@ -14,14 +14,11 @@
     <script>
         "use strict";
 
-        // Основна кнопка
         var greetBtn = document.getElementById('greetBtn');
 
         greetBtn.onclick = function () {
-            // Ховаємо кнопку привітання/
             greetBtn.style.display = "none";
 
-            // Створюємо заголовок
             var h1 = document.createElement('h1');
             h1.className = "big";
             h1.id = "big";
@@ -31,19 +28,14 @@
             h1.style.fontSize = "4em";
             h1.style.textAlign = "center";
 
-            // Створюємо кнопку «Відновити»
             var resetBtn = document.createElement('button');
             resetBtn.id = "resetBtn";
             resetBtn.textContent = "Відновити";
             document.body.appendChild(resetBtn);
 
-            // Обробник для кнопки «Відновити»
             resetBtn.onclick = function () {
-                // Видаляємо h1
                 h1.remove();
-                // Видаляємо саму кнопку «Відновити»
                 resetBtn.remove();
-                // Повертаємо кнопку привітання
                 greetBtn.style.display = "inline-block";
             };
         };
