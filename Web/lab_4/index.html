@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            display: grid;
+            border: 5px solid;
+        }
+
+        .green {
+            width: 50rem;
+            height: 50rem;
+            justify-self: center;
+            align-self: center;
+            border-color: rgb(61, 160, 50);
+            grid-template-rows: 2fr 1fr 3fr 2fr;
+            margin: 12px;
+        }
+
+        .red{
+            border-color: red;
+            margin: 10px;
+
+        }
+
+        .red:nth-child(1){
+            grid-template-columns: 1fr 2fr 1fr;
+        }
+
+        .red:nth-child(2){
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+
+        .red:nth-child(3){
+            grid-template-columns: 1fr 3fr;
+        }
+
+        .red:nth-child(4){
+            grid-template-columns: 1fr 2fr 1fr;
+        }
+
+        .blue{
+            border-color: blue;
+            margin: 10px;
+            padding: 10px;
+            gap: 10px;
+        }
+
+        .blue:nth-child(2){
+            grid-template-rows: 4fr 1fr;
+        }
+
+        .yellow{
+            border-color: rgb(255, 199, 32);
+        }
+    </style>
+</head>
+<body>
+    <div class = "green">
+        <div class = "red">
+            <div class="blue"></div>
+            <div class="blue"></div>
+            <div class="blue">
+                <div class="yellow"></div>
+                <div class="yellow"></div>
+            </div>
+        </div>
+        <div class = "red">
+            <div class="blue"></div>
+            <div class="blue"></div>
+            <div class="blue"></div>
+            <div class="blue"></div>
+        </div>
+        <div class = "red">
+            <div class="blue"></div>
+            <div class="blue">
+                <div class="yellow"></div>
+                <div class="yellow"></div>
+            </div>
+        </div>
+        <div class = "red">
+            <div class="blue">
+                <div class="yellow"></div>
+                <div class="yellow"></div>
+            </div>
+            <div class="blue"></div>
+            <div class="blue"></div>
+        </div>
+    </div>
+</body>
+</html>
