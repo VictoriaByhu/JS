@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Лампочка</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #f0f0f0;
+            padding-top: 40px;
+        }
+
+        #lamp {
+            width: 120px;
+            height: 120px;
+            background-color: white;
+            border-radius: 50%;
+            margin: 20px auto;
+            border: 3px solid #aaa;
+        }
+
+        #lamp.on {
+            background-color: #ffd700;
+            box-shadow: 0 0 35px #ffd700;
+        }
+
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+        }
+
+        .btn-on { background-color: #4CAF50; color: white; }
+        .btn-off { background-color: #f44336; color: white; }
+    </style>
+</head>
+<body>
+    <h2>Керування лампочкою</h2>
+    <div id="lamp" aria-label="лампочка"></div>
+    <button class="btn-on" onclick="turnOn()">Увімкнути</button>
+    <button class="btn-off" onclick="turnOff()">Вимкнути</button>
+
+    <script>
+        function turnOn() {
+            const lamp = document.getElementById("lamp");
+            lamp.classList.add("on");
+        }
+        function turnOff() {
+            const lamp = document.getElementById("lamp");
+            lamp.classList.remove("on");
+        }
+    </script>
+</body>
+</html>
