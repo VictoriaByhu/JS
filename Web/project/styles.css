@@ -1,0 +1,75 @@
+:root {
+    /* CSS Custom Properties */
+    --brand-color: #E6D8C3;
+    --accent: #ffb86b;
+    --muted: #6c757d;
+    background-color: #F5F5F0;
+    --card-bg: #fbfcff;
+    --radius: 12px;
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-content .navbar-nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.main-content .nav-link {
+    font-size: 1.5rem;
+    color: black;
+    text-align: center;
+}
+
+a.btn, button.btn {
+    transition: transform .15s ease, box-shadow .50s ease;
+    padding: 8px 24px;
+    font-size: 1.5rem;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+a.btn:hover, button.btn:hover {
+    transform: translateY(-3px);
+    background-color: #6dad84;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+    color: #fff;
+    border: 1px solid #5D866C;
+}
+
+.nav-link {
+    transition: background-color .30s ease;
+    border-radius: 5px;
+}
+
+.nav-link:hover {
+    background-color: var(--brand-color);
+}
+
+header {
+    background-color: var(--brand-color); /* Використовуємо вашу змінну */
+    justify-items: center;
+}
+
+/* Блок "footer > div" видалено, 
+  оскільки стилі вже є на тезі <footer> у HTML 
+*/
