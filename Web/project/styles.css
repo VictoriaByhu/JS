@@ -1,7 +1,7 @@
 :root {
     /* CSS Custom Properties */
     --brand-color: #E6D8C3;
-    --accent: #ffb86b;
+    --accent: #C2A68C;
     --muted: #6c757d;
     background-color: #F5F5F0;
     --card-bg: #fbfcff;
@@ -17,31 +17,17 @@ body {
 }
 
 .main-content {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    flex-grow: 1; 
+    padding: 20px;display: flex;
+    flex-direction: column;    /* Розташовує секції одну під одною */
+    justify-content: center;      
 }
 
-.main-content .navbar-nav {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    padding-left: 0;
-    list-style-type: none;
-}
-
-.main-content .nav-link {
-    font-size: 1.5rem;
-    color: black;
-    text-align: center;
-}
 
 a.btn, button.btn {
     transition: transform .15s ease, box-shadow .50s ease;
-    padding: 8px 24px;
-    font-size: 1.5rem;
+    padding: 5px 25px;
+    font-size: 1rem;
     border-radius: 8px;
     background-color: #fff;
     color: #333;
@@ -50,26 +36,51 @@ a.btn, button.btn {
 
 a.btn:hover, button.btn:hover {
     transform: translateY(-3px);
-    background-color: #6dad84;
+    background-color: #C2A68C;
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
     color: #fff;
-    border: 1px solid #5D866C;
+    border: 1px solid #C2A68C;
 }
 
 .nav-link {
-    transition: background-color .30s ease;
+    transition: color .2s ease, transform .2s ease; 
     border-radius: 5px;
+    color: #333; 
+    font-weight: 500;
 }
 
 .nav-link:hover {
-    background-color: var(--brand-color);
+    color: var(--accent);
+    transform: scale(1.05);
 }
 
 header {
-    background-color: var(--brand-color); /* Використовуємо вашу змінну */
-    justify-items: center;
+    background-color: var(--brand-color);
 }
 
-/* Блок "footer > div" видалено, 
-  оскільки стилі вже є на тезі <footer> у HTML 
-*/
+.hero .btn-primary {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    color: white;
+}
+
+.hero .btn-primary:hover {
+    background-color: var(--brand-color); 
+    border-color: var(--brand-color);
+    color: #333; 
+}
+
+.hero .btn-outline-secondary {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+.hero .btn-outline-secondary:hover {
+    background-color: var(--accent);
+    color: white;
+}
+
+#heroCarousel {
+    /* Додаємо м'яку, глибоку тінь */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
