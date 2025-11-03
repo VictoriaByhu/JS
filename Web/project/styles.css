@@ -54,6 +54,24 @@ a.btn:hover, button.btn:hover {
     transform: scale(1.05);
 }
 
+.nav-tabs .nav-link {
+    color: var(--muted); /* Сірий для неактивних */
+    border-color: var(--brand-color); /* Бежева рамка */
+}
+
+.nav-tabs .nav-link.active {
+    /* Робимо активний таб вашим --accent кольором */
+    color: #333;
+    font-weight: 500;
+    background-color: var(--accent);
+    border-color: var(--accent);
+}
+
+.nav-tabs .nav-link:hover:not(.active) {
+    color: #000;
+    border-color: var(--accent);
+}
+
 header {
     background-color: var(--brand-color);
 }
@@ -83,4 +101,74 @@ header {
 #heroCarousel {
     /* Додаємо м'яку, глибоку тінь */
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* 1. ВИПРАВЛЕННЯ МАКЕТУ: 
+   (Виправляє баг з минулого разу, коли контент був по центру) */
+.main-content {
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+    /* Прибираємо 'justify-content: center' */
+    /* padding: 20px;display: flex; <-- ваш старий код був неохайним */
+}
+
+/* 2. НОВІ СТИЛІ ДЛЯ СТОРІНКИ ДЕТАЛЕЙ */
+
+/* Акцентна кнопка (для "Sign Up Now") */
+.btn-accent {
+    background-color: var(--accent);
+    color: #fff;
+    border: 1px solid var(--accent);
+    font-weight: 500;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-accent:hover {
+    background-color: #a98d74; /* Трохи темніший --accent */
+    color: #fff;
+}
+
+/* Стилізований список "What You'll Learn" */
+.checkmark-list li {
+    position: relative;
+    padding-left: 30px; /* Відступ для іконки */
+}
+
+.checkmark-list li::before {
+    content: '\2714'; /* <--- ОНОВЛЕНО. Це CSS-код для галочки */
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--accent); 
+    font-weight: bold;
+}
+.course-card {
+    /* Використовуємо ваші глобальні налаштування */
+    border: 1px solid var(--brand-color);
+    border-radius: var(--radius);
+    background-color: var(--card-bg);
+    /* Додаємо тінь та анімацію */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-5px); /* Ефект "підйому" */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.course-card .card-title {
+    /* Робимо заголовок картки акцентним */
+    color: var(--accent);
+    font-weight: 600;
+}
+
+/* 4. Покращуємо посилання в картці */
+.course-card .stretched-link {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+}
+.course-card .stretched-link:hover {
+    color: var(--accent);
 }
